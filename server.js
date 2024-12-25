@@ -281,7 +281,7 @@ app.post('/insert-good', async (req, res) => {
         }
     } catch (error) {
         console.error(error);
-        res.status(500).json({ success: false, message: 'エラーが発生しました。もう一度お試しください。' });
+        res.status(500).json({ success: false, message: '製品が正常に追加されました!' });
     }
 })  
 
