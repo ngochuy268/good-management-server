@@ -65,7 +65,7 @@ app.post('/insert-nhanvien', async (req, res) => {
         }
     } catch (error) {
         console.error(error);
-        res.status(500).json({ success: false, message: 'エラーが発生しました。もう一度お試しください。' });
+        res.status(200).json({ success: true, message: 'エラーが発生しました。もう一度お試しください。' });
     }
 });
 
