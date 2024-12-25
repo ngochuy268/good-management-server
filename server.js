@@ -273,7 +273,7 @@ app.post('/insert-good', async (req, res) => {
             INSERT INTO sanpham (idgood, namegood, sell, purchase, image, quantity, status)
             VALUES (?, ?, ?, ?, ?, ?, ?)
         `, [id, name, sell, cost, image, quantity, status]);
-        
+        await new Promise(resolve => setTimeout(resolve, 5000));
         if (result) {
             res.json({ success: true, message: '製品が正常に追加されました!' });
         } else {
