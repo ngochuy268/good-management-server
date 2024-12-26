@@ -2,7 +2,7 @@ const express = require('express');
 const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser');
 const mysql = require('mysql2');
-// const cors = require('cors');
+const cors = require('cors');
 const app = express();
 // app.use(cors());
 app.use(express.json({ limit: '100mb' }));
@@ -11,12 +11,12 @@ app.use(bodyParser.json({ limit: '100mb' }));
 app.use(bodyParser.urlencoded({ limit: '100mb', extended: true }));
 const jwt = require('jsonwebtoken');
 
-// app.use(cors({
-//     origin: ['http://localhost:3000','https://good-management-client.vercel.app'], 
-//     methods: ['GET', 'POST', 'OPTIONS'],
-//     allowedHeaders: ['Content-Type'], ['Authorization'], 
-// }));
-// app.options('*', cors())
+app.use(cors({
+    origin: ['http://localhost:3000','https://good-management-client.vercel.app'], 
+    methods: ['GET', 'POST', 'OPTIONS'],
+    allowedHeaders: ['Content-Type'], ['Authorization'], 
+}));
+app.options('*', cors())
 
 const db = mysql.createPool({
     host: process.env.DB_HOST,
