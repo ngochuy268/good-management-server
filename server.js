@@ -14,7 +14,7 @@ const jwt = require('jsonwebtoken');
 app.use(cors({
     origin: ['http://localhost:3000','https://good-management-client.vercel.app'], 
     methods: ['GET', 'POST', 'OPTIONS'],
-    allowedHeaders: ['Content-Type'], ['Authorization'], 
+    allowedHeaders: ['Content-Type', 'Authorization'], 
 }));
 app.options('*', cors())
 
